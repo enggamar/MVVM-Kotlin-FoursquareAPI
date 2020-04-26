@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "740649367438",
+    "firebase_url": "https://fueledlunch.firebaseio.com",
+    "project_id": "fueledlunch",
+    "storage_bucket": "fueledlunch.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740649367438:android:41792174456642ae8196df",
+        "android_client_info": {
+          "package_name": "test.fueled"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "740649367438-fb4iv308rj56ft6mhdbtldsrbruoffnq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBff4PfoO74661K4Enz9rcTmYFH88oC7QE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "740649367438-fb4iv308rj56ft6mhdbtldsrbruoffnq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

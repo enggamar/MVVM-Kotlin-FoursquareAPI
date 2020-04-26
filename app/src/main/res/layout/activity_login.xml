@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="loginViewModel"
+            type="test.fueled.viewmodel.LoginViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_80sdp"
+            android:src="@drawable/ic_spoon" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            style="@style/login_text_style"
+            android:layout_below="@+id/iv_logo"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="@string/fueled_lunch"
+            android:textColor="@color/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:layout_margin="@dimen/_15sdp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_email"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_email_address"
+                android:textColorHint="@color/Silver"
+                app:boxCornerRadiusBottomEnd="@dimen/_4sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_4sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_4sdp"
+                app:boxCornerRadiusTopStart="@dimen/_4sdp"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_email"
+                    style="@style/input_text_style"
+                    android:layout_height="54dp"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="30"
+                    android:onTextChanged="@{(text, start, before, count) -> loginViewModel.onEmailTextChanged(text)}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:hint="@string/enter_password"
+                android:textColorHint="@color/Silver"
+                app:boxCornerRadiusBottomEnd="@dimen/_4sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_4sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_4sdp"
+                app:boxCornerRadiusTopStart="@dimen/_4sdp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_password"
+                    style="@style/input_text_style"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:maxLength="15"
+                    android:onTextChanged="@{(text, start, before, count) -> loginViewModel.onPasswordTextChanged(text)}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/button_backgound"
+                android:onClick="@{(v)->loginViewModel.loginClicked()}"
+                android:text="@string/login"
+                android:textColor="@color/White"
+                android:textSize="@dimen/_13sdp" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_signup"
+            style="@style/login_text_style"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:onClick="@{(v)->loginViewModel.signupClicked()}"
+            android:textAllCaps="false"
+            app:bindtext="@{true}" />
+    </RelativeLayout>
+</layout>

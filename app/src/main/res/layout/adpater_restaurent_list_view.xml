@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="test.fueled.model.Item" />
+
+        <variable
+            name="viewModel"
+            type="test.fueled.viewmodel.HomeViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_235sdp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_210sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_210sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@drawable/ripple_effect"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_thumbs_down"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_120sdp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/dummy" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@{item.venue.name}"
+                                android:textColor="@color/Black"
+                                android:textSize="@dimen/_13sdp"
+                                android:textStyle="bold"
+                                tools:text="The world of wonder park" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                bindDistance="@{item.venue.location.distance}"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/colorAccent"
+                                android:drawableStart="@drawable/map"
+                                android:drawablePadding="@dimen/_4sdp"
+                                android:gravity="center"
+                                android:textColor="@color/Black"
+                                android:textSize="@dimen/_12sdp"
+                                app:drawableTint="@color/colorAccent"
+                                tools:text="1.2 KM" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                bindAddress="@{item.venue.location.formattedAddress}"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_8sdp"
+                                android:layout_weight="1"
+                                android:maxLines="2"
+                                android:textColor="@color/DarkGray"
+                                android:textSize="@dimen/_13sdp"
+                                tools:text="The world of wonder park\n The world of wonder park" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="@drawable/ripple_effect_red_circular"
+                                android:gravity="center"
+                                android:onClick="@{(v)->viewModel.goToMap(item.venue.location)}"
+                                android:padding="@dimen/_10sdp"
+                                android:src="@drawable/compass"
+                                android:tint="@color/colorPrimary"
+                                app:drawableTint="@color/colorAccent" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/rounder_corner_backgound"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="@drawable/ripple_effectcircular"
+                android:gravity="center"
+                android:text="@string/view_menu"
+                android:textColor="@color/White"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_22sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:background="@drawable/circle_backgound"
+                android:clickable="true"
+                android:elevation="@dimen/_5sdp"
+                android:focusable="true"
+                android:foreground="@drawable/ripple_effect"
+                android:onClick="@{(v)->viewModel.removeItemFromList(item)}"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/dislike"
+                android:tint="@color/colorPrimary" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

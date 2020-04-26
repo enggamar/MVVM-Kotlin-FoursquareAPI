@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Fueled Lunch</string>
+
+    <string name="something_went_wrong">Something went wrong, please try again later.</string>
+    <string name="fueled_lunch">Fueled LUNCH</string>
+    <string name="enter_email_address">Enter Email Address</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="i_am_a_new_user_signup">I am a new User, SignUp</string>
+    <string name="login">Login</string>
+    <string name="signup">SIGNUP</string>
+    <string name="cancel">CANCEL</string>
+    <string name="user_does_not_exist">User does not exist.</string>
+    <string name="fueled_technologies_pvt_ltd">Fueled Technologies Pvt.Ltd</string>
+    <string name="fueled_address">B-26, 27, Block B, Sector 1, Noida</string>
+    <string name="view_menu">View Menu</string>
+    <string name="logout">Logout</string>
+    <string name="logout_desc">Are you sure you want to logout?</string>\
+    <string name="yes_text">Yes</string>
+    <string name="no_text">No</string>
+</resources>

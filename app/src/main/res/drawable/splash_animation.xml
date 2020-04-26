@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/animation_list_splash"
+    android:oneshot="false">
+    <item
+        android:drawable="@drawable/ic_spoon"
+        android:duration="150" />
+    <item
+        android:drawable="@drawable/ic_cup"
+        android:duration="150" />
+    <item
+        android:drawable="@drawable/ic_bottal"
+        android:duration="150" />
+    <item
+        android:drawable="@drawable/ic_img"
+        android:duration="150" />
+    <item
+        android:drawable="@drawable/ic_pizza"
+        android:duration="150" />
+</animation-list>
